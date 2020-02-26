@@ -1,0 +1,14 @@
+sum_eng_train.csv: File contains 16017 Sumerian and English language pairs.
+sum_eng_test.csv: File contains 1933 Sumerian and English language pairs.
+sum_eng_develop.csv: File contains 2059 Sumerian and English language pairs.
+
+As the name suggests train file can be used for training model, Final performance of the model should be on test files.
+Develop file are standard development file. Can be used for hyperparameter tuning and evaluation. Can also be used as a validation set.
+
+.txt files are same dataset parallel phrases in another file format.
+Some redundant phrases were removed from CVS files, so you may observe that they have fewer phrases that .csv files. 
+
+NOTE: Dataset contains only short phrases, data is noisy, incomplete and too small for implementing neural machine translation models, there are some missing phrases too denoted by "xxxx".
+The organization is looking for some ways for data augmentation, probably learning embeddings from external corpora to augment the translation performance of the models.
+
+CDLI Communication Channel: https://cdli-gsoc.slack.com/
