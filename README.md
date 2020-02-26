@@ -15,7 +15,7 @@ Better accuracy than the previous year model.
 Testing different at least two NMT approaches like Cross-lingual Language Model, Dual Learning or Back-Translation.
 Students with a research background will be preferred.
 
-##Getting started:
+## Getting started:
 1. [Cross-lingual Language Model](https://arxiv.org/pdf/1901.07291.pdf)
 2. [Dual Learning](https://papers.nips.cc/paper/6469-dual-learning-for-machine-translation)
 3. Back-Translation for Unsupervised NMT
