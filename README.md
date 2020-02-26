@@ -1,4 +1,4 @@
-# Sumerian - English Machine Translation (HARD)
+# Sumerian - English Machine Translation (GSoC - 2020)
 As part of the MTAAC project, the organization host Sumerian data comprising 1.5 million transliteration lines and 10K parallel lines corpus (approx). We already developed a neural network-based encode-decoder architecture for English-Sumerian Machine Translation, but that leverages the parallel dataset only, which is not sufficient to achieve state of the art results. Your task is to develop a language model using the monolingual data as well as parallel data to translate Sumerian phrases to English, and vice versa.
 
 ## Possible Mentors:
