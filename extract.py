@@ -2,11 +2,11 @@ import csv
 from bisect import bisect_left
 
 
-cdli_atf=open("cdliatf_unblocked.atf", "r")
+cdli_atf=open("./data/cdliatf_unblocked.atf", "r")
 cdli_data = cdli_atf.readlines()
 
 
-cdli_catalogue_csv = csv.DictReader(open("cdli_catalogue.csv", "r"))
+cdli_catalogue_csv = csv.DictReader(open("./data/cdli_catalogue_1of2.csv", "r"))
 cdli_catalogue = []
 for line in cdli_catalogue_csv:
     cdli_catalogue.append(line)
@@ -19,7 +19,7 @@ catalogue_id_list = []
 
 
 def list_of_genres():
-    cdli_catalogue_csv = open("cdli_catalogue.csv", "r")
+    cdli_catalogue_csv = open("./data/cdli_catalogue_1of2.csv", "r")
     cdli_catalogue_data = csv.DictReader(cdli_catalogue_csv)
     for line in cdli_catalogue_data:
         cdli_catalogue.append(line)
