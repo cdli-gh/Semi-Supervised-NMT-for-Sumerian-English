@@ -1,6 +1,6 @@
 import re
 
-stop_chars = ["@", "#", "&", "$"]
+stop_chars = ["@", "#", "&", "$", ">"]
 
 def pretty_line(text_line):
     x = re.findall("[a-zA-Z ]", text_line)
@@ -19,14 +19,21 @@ def parallel():
     pll_org = open("sumerian_translated.atf", "r")
     sumerian_pll = open("sumerian_pll.atf", "w")
     english_pll = open("english_pll.atf", "w")
-
-    for line in pll_org.readlines():
-        if line[0] not in stop_chars:
-            sumerian_pll.write(pretty_line(line))
+    lines = pll_org.readlines()
+    print(len(lines))
+    for i in range(len(lines)):
+        if lines[i] != " " and lines[i][0] not in stop_chars:
+            sumerian_pll.write(pretty_line(lines[i]))
             sumerian_pll.write('\n')
-        if line.find("#tr.en") != -1:
-            english_pll.write(pretty_line(line[7:]))
-            english_pll.write('\n')
+            while True:
+                try:
+                    i += 1
+                    if lines[i].find("#tr.en") != -1:
+                        english_pll.write(pretty_line(lines[i][7:]))
+                        english_pll.write('\n')
+                        break
+                except:
+                    break
 
 sumerian_mono()
 parallel()
