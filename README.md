@@ -1,16 +1,16 @@
 ![](https://nelc.ucla.edu/wp-content/uploads/2019/05/Screen-Shot-2019-05-15-at-4.12.48-PM.png)
 
 
-# Sumerian - English Machine Translation (GSoC - 2020)
+# Sumerian-English Unsupervised Neural Machine Translation
 As part of the MTAAC project, the organization hosts Sumerian data comprising 1.5 million transliteration lines and 10K parallel lines corpus (approx). We already developed a neural network-based encode-decoder architecture for English-Sumerian Machine Translation, but that leverages the parallel dataset only, which is not sufficient to achieve state-of-the-art results. Your task is to develop a language model using the monolingual data as well as parallel data to translate Sumerian phrases to English, and vice-versa.
 
-## Possible Mentors:
+## Mentors:
 1. Niko Schenk
 2. Ravneet Punia
 
 ### Link for the Dataset: TODO
 
-## Your Tasks & Desired (Minimum) Outcomes:
+## Tasks & Desired (Minimum) Outcomes:
 Train and evaluate different models and architectures on standard train/development/test splits.
 Experiment with all possible hyperparameter settings to obtain the best performance.
 Perform a quantitative and qualitative evaluation of the translations.
