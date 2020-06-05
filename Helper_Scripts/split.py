@@ -32,8 +32,25 @@ for i in range(int(len(lines_e)*split_ratio)):
     lines_e.pop(num)
     lines_s.pop(num)
 
+
+dev_e = []
+dev_s = []
+
+for i in range(int(len(lines_e)*split_ratio/2)):
+    num = np.random.randint(0, len(lines_s)-1)
+    if(num in chosen):
+        i-=1
+        continue
+    chosen.append(num)
+    dev_e.append(lines_e[num])
+    dev_s.append(lines_s[num])
+    lines_e.pop(num)
+    lines_s.pop(num)
+
 savefile('../Dataset/Data_to_use/sum_test.txt', test_s)
 savefile('../Dataset/Data_to_use/eng_test.txt', test_e)
+savefile('../Dataset/Data_to_use/sum_dev.txt', dev_s)
+savefile('../Dataset/Data_to_use/eng_dev.txt', dev_e)
 savefile('../Dataset/Data_to_use/sum_train.txt', lines_s)
 savefile('../Dataset/Data_to_use/eng_train.txt', lines_e)
 
