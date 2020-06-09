@@ -3,7 +3,7 @@ import re
 
 stop_chars=["@", "#", "&", "$"]
 
-df1 = pd.read_csv('../UrIII_admin_translated.csv')
+df1 = pd.read_csv('../all_sum_parallel.csv')
 
 lines = list(df1.values[:, 0])
       
@@ -62,10 +62,10 @@ def pretty_line_eng(text_line):
 
 def parallel(lines_r):
     # pll_org = open("../sumerian_translated.atf", "r")
-    sum_org = open("../dataset/original/UrIII_sum_pll.txt", "w")
-    eng_org = open("../dataset/original/UrIII_eng_pll.txt", "w")
-    sumerian_pll = open("../dataset/cleaned/UrIII_sum_pll.txt", "w")
-    english_pll = open("../dataset/cleaned/UrIII_eng_pll.txt", "w")
+    sum_org = open("../dataset/original/supp_sum_pll2.txt", "w")
+    eng_org = open("../dataset/original/supp_eng_pll2.txt", "w")
+    sumerian_pll = open("../dataset/cleaned/allCompSents/pll.sum", "a")
+    english_pll = open("../dataset/cleaned/allCompSents/pll.eng", "a")
     # lines = pll_org.readlines()
     # print(len(lines_r))
     for lines in lines_r:
@@ -110,31 +110,3 @@ def parallel(lines_r):
                 count_words = 0
                     
 parallel(lines)
-
-# df1.apply(parallel)
-
-# Original_sumerian_mono=[]
-
-# for i in lines:
-#     if len(i)>0 and i[0] not in stopping_chars:
-#         index=i.find(".")
-#         l=i[index+1:].strip()
-#         Original_sumerian_mono.append(l)
-
-# print('Data Loaded')
-
-# processed_summerian=[] 
-# for i in range(len(Original_sumerian_mono)):
-#     text=processing_1(Original_sumerian_mono[i])
-#     if(re.search("\d\d\d\d\d",text)):
-#         continue
-#     if(len(text)>2):
-#         processed_summerian.append(text)
-
-# print('Data Processed')
-        
-        
-# savefile('../Dataset/Original_Data/supp_mono.txt', Original_sumerian_mono)
-# savefile('../Dataset/Cleaned_Data/sumerian_mono.txt', processed_summerian)
-
-# print('Files Saved')

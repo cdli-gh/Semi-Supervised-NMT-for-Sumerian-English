@@ -4,7 +4,7 @@ import re
 stopping_chars=["@", "#", "&", "$"]
 lines=[]
 
-with open("../sumerian_untranslated.atf", "r") as f:
+with open("../dataset/original/sumerian_test.txt", "r") as f:
     for line in f:
         line=line.strip()
         lines.append(line)
@@ -59,7 +59,7 @@ for i in range(len(Original_sumerian_mono)):
 print('Data Processed')
         
         
-savefile('../Dataset/Original_Data/sumerian_mono.txt', Original_sumerian_mono)
-savefile('../Dataset/Cleaned_Data/sumerian_mono.txt', processed_summerian)
+savefile('../dataset/original/sumerian_test.txt', Original_sumerian_mono)
+savefile('../dataset/dataToUse/benchmark.txt', processed_summerian)
 
 print('Files Saved')

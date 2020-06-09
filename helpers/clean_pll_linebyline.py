@@ -30,10 +30,10 @@ def pretty_line_eng(text_line):
 
 def parallel():
     pll_org = open("../sumerian_translated.atf", "r")
-    sum_org = open("../Dataset/Original_Data/sumerian_pll.txt", "w")
-    eng_org = open("../Dataset/Original_Data/english_pll.txt", "w")
-    sumerian_pll = open("../Dataset/Cleaned_Data/sumerian_pll.txt", "w")
-    english_pll = open("../Dataset/Cleaned_Data/english_pll.txt", "w")
+    sum_org = open("../dataset/original/sumerian_pll.txt", "w")
+    eng_org = open("../datastet/original/english_pll.txt", "w")
+    sumerian_pll = open("../dataset/cleaned/sumerian_pll.txt", "w")
+    english_pll = open("../dataset/cleaned/english_pll.txt", "w")
     lines = pll_org.readlines()
     print(len(lines))
     for i in range(len(lines)):
