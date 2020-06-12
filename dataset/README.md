@@ -32,6 +32,6 @@ While, we would be using the same test data for evaluation, which corresponds to
 
 ## Files and Folders
 
-```original```: Contains data extracted from the raw files without any additional preprocessing
-```cleaned```: Contains cleaned data for each of the 4 categories
-```dataToUse```: Contains cleaned data divided into training, testing and validation sets
+```original```: Contains data extracted from the raw files without any additional preprocessing <br>
+```cleaned```: Contains cleaned data for each of the 4 categories <br>
+```dataToUse```: Contains cleaned data divided into training, testing and validation sets <br>
