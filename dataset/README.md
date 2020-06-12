@@ -1,36 +1,37 @@
 # Dataset Description
 
-## Original Dataset
-This is Original data provided by organization. Dataset contains short phrases, data is noisy, repetitive phrases, there are some missing phrases too denoted by "xxxx".
+All of the data in this folder has been derived from the raw files present in the main folder, namely ```../all_sum.csv```, ```../sumerian_untranslated.atf```,  ```../all_sum_parallel.csv``` and ```../sumerian_translated.atf```, where the first two files contain the monolingual Sumerian data and the later two contain parallel data for Sumerian-English.
 
-As a developer feel free to experiment with this dataset, such as applying own augmentation algorithms,  probably learning embeddings from external corpora to augment the translation performance of the models. etc.
+A sample complete sentence from the raw data is as follows:
 
-**sum_eng_train.csv:** File contains 16017 Sumerian and English language pairs.
+```
+&P011012 = WF 055 
+#atf: lang sux 
+@tablet 
+@obverse 
+@column 1 
+1. 1(u@c) 1(asz@c) 2(barig@c) sze gur-mah 
+#tr.en: 11 gurmaḫ 2 barig barley,
+2. ganun-mah 
+#tr.en: from Big-Storehouse; 
+3. 6(asz@c) sze gur 
+#tr.en: 6 gur(maḫ) barley, 
+4. 3(asz@c) 1/2(asz@c) 2(barig@c) ganun 
+#tr.en: 3 1/2 (gurmaḫ) 2 barig, storehouse,
+```
 
-**sum_eng_test.csv:** File contains 1933 Sumerian and English language pairs.
+As can be seen, we have line by line translated sentences. Concatenating all the lines of a language would give us a complete sentence corresponding to that language.
 
-**sum_eng_develop.csv:** File contains 2059 Sumerian and English language pairs.
+Thus, we have divided our parallel data into 4 broad categories:
+- UrIII Admin Data with complete sentence translations
+- UrIII Admin Data with line by line translations
+- All kinds of Sumerian Data with complete sentence translations
+- All kinds of Sumerian Dtaa with line by line translations
 
-As the name suggests train file can be used for training model, Final performance of the model should be on test files.
-Develop file are standard development file. Can be used for hyperparameter tuning and evaluation. Can also be used as a validation set.
+While, we would be using the same test data for evaluation, which corresponds to UrIII Admin Data with complete sentences.
 
-.txt files are same dataset parallel phrases in another file format.
-Some redundant phrases were removed from CVS files, so you may observe that they have fewer phrases that .csv files.
+## Files and Folders
 
-## Cleaned Dataset
-
-This data is derived using the Original Dataset. While cleaning dataset, repetitive and missing phrases are removed. Cleaned Data set is only available as .txt files.
-
-**train files:** Contains 8117 phrase.
-
-**test files:** Contains 1015 phrases.
-
-**val files:** Contains 1015 phrases.
-
-## Normalized dataset
-This dataset is derived from Cleaned dataset. While process of normalization
-1. All characters are reduced to lower case,
-2. Punctuation are removed from both Sumerian and English files.
-3. Stop Words removed from English files. Sumerian don't have stop words.
-
-This is done to remove redundant cases occurs during tokenization and creates a lot of redundant cases in Neural Network training.
+```original```: Contains data extracted from the raw files without any additional preprocessing
+```cleaned```: Contains cleaned data for each of the 4 categories
+```dataToUse```: Contains cleaned data divided into training, testing and validation sets
