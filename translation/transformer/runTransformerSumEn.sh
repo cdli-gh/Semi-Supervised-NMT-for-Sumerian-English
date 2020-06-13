@@ -3,13 +3,15 @@ pip3 install OpenNMT-py
 echo 'Cloning OpenNMT...'
 git clone https://github.com/OpenNMT/OpenNMT-py.git
 
-langPair=sum-eng           # source-target
-src=$(echo $langPair | cut -d '-' -f 1)
-tgt=$(echo $langPair | cut -d '-' -f 2)
-datadir=../../../dataset/dataToUse/          # path to directory containing data, refer README for desired data format
-savedir=../../savedWeights/       # directory to direct the checkpoints
+datadir=${1:-../../../dataset/dataToUse/allCompSents}          # path to directory containing data, refer README for desired data format
+savedir=${2:-../../savedWeights}       # directory to direct the checkpoints
 numGPUs=1         # number of GPUs
 gpu_ranks=$numGPUs-1
+langPair=${3-sum-eng}           # source-target
+src=$(echo $langPair | cut -d '-' -f 1)
+tgt=$(echo $langPair | cut -d '-' -f 2)
+
+echo "$datadir, $savedir, $langPair"
 
 cd OpenNMT-py
 
