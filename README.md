@@ -11,7 +11,7 @@ As part of the MTAAC project, the organization hosts Sumerian data comprising 1.
 ## Tasks:
 
 - [x] Preparing the parallel and monolingual texts for final usage. Using methods like BPE and BBPE to tokenize the text.
-- [ ] Implementing the Vanilla Transformer for Sumerian to English as well as English to Sumerian
+- [x] Implementing the Vanilla Transformer for Sumerian to English as well as English to Sumerian
 - [ ] Back Translating Sumerian Monolingual Text
 - [ ] XLM Encoder along with a Transformer Decoder on English-Sumerian Translation.
 - [ ] Model-Level Dual Learning using tied Transformer Encoder-Decoder pairs.
