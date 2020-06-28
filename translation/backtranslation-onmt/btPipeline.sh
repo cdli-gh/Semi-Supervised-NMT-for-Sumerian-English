@@ -8,7 +8,7 @@ do
     echo "############################ Back Translating Sumerian using previous weights ############################"
     python3 backtranslateONMT.py --model ../../weights/BT/${shard}st/weights_step_10000.pt
     echo "############################ Stacking ############################"
-    python3 stack.py --backSrc ./src/shard${shard}.sum ./src/shard${shard}.eng
+    python3 stack.py --backSrc ./src/shard${shard}.sum ./backT/shard${shard}.eng
     mkdir ../../weights/BT/${val}st/
     echo "############################ Re-Training ############################"
     sh runTransformerSumEn.sh ./backed ../../weights/BT/${val}st/

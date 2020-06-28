@@ -3,8 +3,8 @@ import argparse
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--backSrc', type='str')
-parser.add_argument('--backTgt', type='str')
+parser.add_argument('--backSrc', type=str)
+parser.add_argument('--backTgt', type=str)
 
 args = parser.parse_args()
 
