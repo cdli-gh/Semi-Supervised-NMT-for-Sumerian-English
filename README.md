@@ -2,7 +2,11 @@
 
 
 # Sumerian-English Unsupervised Neural Machine Translation
-As a part of the MTAAC project at CDLI, we aim to build an end-to-end NMT Pipeline while making use of the extensive monolingual Sumerian Data. Previous models that have been used to carry out English<->Sumerian Translation have only made use of the available parallel corpora. Presently we have only about 50K extracted sentences for both languages in the parallel corpora, whereas around 1.47M sentences in the Sumerian monolingual corpus. This huge amount of monolingual data can be used to improve the NMT system by combining it with techniques like Back Translation, Tranfer Learning and Dual Learning which have proved specially useful for Low-Resource languages like Sumerian which have a limited amount of parallel data. Moreover, we also look to implement models like XLM and MASS for the same.
+As a part of the MTAAC project at CDLI, we aim to build an end-to-end NMT Pipeline while making use of the extensive monolingual Sumerian Data. 
+
+Previous models that have been used to carry out English<-->Sumerian Translation have only made use of the available parallel corpora. Presently we have only about 50K extracted sentences for both languages in the parallel corpora, whereas around 1.47M sentences in the Sumerian monolingual corpus. 
+
+This huge amount of monolingual data can be used to improve the NMT system by combining it with techniques like Back Translation, Tranfer Learning and Dual Learning which have proved specially useful for Low-Resource languages like Sumerian which have a limited amount of parallel data. Moreover, we also look to implement models like XLM and MASS for the same.
 
 
 ## Requirements
