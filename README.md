@@ -6,12 +6,13 @@ As a part of the MTAAC project at CDLI, we aim to build an end-to-end NMT Pipeli
 
 
 ## Requirements
-Python 3.5.2 or higher
-NumPy
-Pandas
-PyTorch
-OpenNMT-py
-fairseq
+Python 3.5.2 or higher <br>
+NumPy <br>
+Pandas <br>
+PyTorch <br>
+Torch Text <br>
+OpenNMT-py <br>
+fairseq <br>
 
 
 ## Repository Structure
