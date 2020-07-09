@@ -7,6 +7,16 @@
 
 ## Running
 
+### Pre-Trained Checkpoint
+
+We undertook our Back Translation in 8 shards and weights after Back Translating and Retraining from each is avilable. Run the following command after replacing ```shard_num``` {1,8} to get to best checkpoint after training with all the shard upto that point:
+
+```
+wget https://cdlisumerianunmt.s3.us-east-2.amazonaws.com/BackTranslation/<shard_num>th/_step_10000.pt
+```
+
+Path to this directory needs to be mentioned while [Translating](https://github.com/cdli-gh/Unsupervised-NMT-for-Sumerian-English/blob/master/translation/backtransformer-onmt/README.md#translating-optional).
+
 ### Back Translating, Stacking, Re-Training and then Evaluating (shard by shard)-
 
 ```
@@ -15,7 +25,7 @@ sh btPipeline.sh <weightsDir, path to directory where weights are stored> \
                  <shardBackDir, directory where the backtranslated shards need to be kept> \
                  <evalSrcDir, path to directory containing the evaluation file> \
                  <evalTgtDir, directory to store the predicted translations> \
-```
+``` 
 
 #### Default arguments:
 
