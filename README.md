@@ -1,5 +1,6 @@
-![](https://cdli.ucla.edu/dl/lineart/P127756_ld.jpg)
-
+<p align="center">
+  <img src="https://github.com/cdli-gh/Unsupervised-NMT-for-Sumerian-English/blob/master/repoSum0.jpg">
+</p>
 
 # Sumerian-English Unsupervised Neural Machine Translation
 As a part of the MTAAC project at CDLI, we aim to build an end-to-end NMT Pipeline while making use of the extensive monolingual Sumerian Data. 
