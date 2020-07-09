@@ -86,6 +86,6 @@ For reproducing the results, refer the documentation in the sub-folders inside `
 
 - [x] Preparing the parallel and monolingual texts for final usage. Using methods like BPE and BBPE to tokenize the text.
 - [x] Implementing the Vanilla Transformer for Sumerian to English as well as English to Sumerian
-- [ ] Back Translating Sumerian Monolingual Text
+- [x] Back Translation using Sumerian Monolingual data
 - [ ] XLM Encoder along with a Transformer Decoder on English-Sumerian Translation.
 - [ ] Model-Level Dual Learning using tied Transformer Encoder-Decoder pairs.
