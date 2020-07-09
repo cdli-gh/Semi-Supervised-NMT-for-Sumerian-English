@@ -1,5 +1,11 @@
 <p align="center">
-  <img src="https://github.com/cdli-gh/Unsupervised-NMT-for-Sumerian-English/blob/master/repoSum0.jpg">
+  <img src="https://github.com/cdli-gh/Unsupervised-NMT-for-Sumerian-English/blob/master/repoSum0.jpg" />
+</p>
+
+<p align="center">
+  <b> Figure: </b> Shows a Cuneiform inscription, extracted from actual tablets.<br>
+  <i> Sumerian: </i> pisan-dub-ba sza3-bi su-ga sag-nig2-gur11-ra u3 zi-ga lu2-kal-la i3-gal2 ... <br>
+  <i> English: </i> Basket-of-tablets: therefroms, restitutions, debits, and credits, of Lukalla are here; ...
 </p>
 
 # Sumerian-English Unsupervised Neural Machine Translation
