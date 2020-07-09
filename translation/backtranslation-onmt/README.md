@@ -9,7 +9,7 @@
 
 ### Pre-Trained Checkpoint
 
-We undertook our Back Translation in 8 shards and weights after Back Translating and Retraining from each is avilable. Run the following command after replacing ```shard_num``` {1,8} to get to best checkpoint after training with all the shard upto that point:
+We undertook our Back Translation in 8 shards and weights after Back Translating and Retraining from each is avilable. Run the following command after replacing ```shard_num``` {1,8} to get to best checkpoint after training with all the shards upto that point:
 
 ```
 wget https://cdlisumerianunmt.s3.us-east-2.amazonaws.com/BackTranslation/<shard_num>th/_step_10000.pt
