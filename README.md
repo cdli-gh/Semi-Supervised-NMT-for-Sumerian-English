@@ -1,4 +1,4 @@
-![](https://nelc.ucla.edu/wp-content/uploads/2019/05/Screen-Shot-2019-05-15-at-4.12.48-PM.png)
+![](https://cdli.ucla.edu/dl/lineart/P127756_ld.jpg)
 
 
 # Sumerian-English Unsupervised Neural Machine Translation
