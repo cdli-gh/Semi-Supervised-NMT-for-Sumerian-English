@@ -2,10 +2,10 @@
 
 ## Pre-Trained Checkpoint
 
-To load a pre-trained checkpoint, run the following command in the appropriate directory:
+We have trained the Vanilla Transformer model for 4 data configurations as mentioned before and provide weights for all four of them. Replace ```data_mode``` ```[AllCompSents, UrIIICompSents, UrIIILineByLine, AllLineByLine]``` in the following command to load the respective pre-trained checkpoint:
 
 ```
-wget https://cdlisumerianunmt.s3.us-east-2.amazonaws.com/Transformer/AllCompSents/_step_14000.pt
+wget https://cdlisumerianunmt.s3.us-east-2.amazonaws.com/Transformer/<data_mode>/_step_14000.pt
 ```
 
 Path to this directory needs to be mentioned while [Translating](https://github.com/cdli-gh/Unsupervised-NMT-for-Sumerian-English/blob/master/translation/transformer/README.md#translating).
