@@ -1,5 +1,15 @@
 # Transformer for Sumerian-English NMT
 
+## Pre-Trained Checkpoint
+
+To load a pre-trained checkpoint, run the following command in the appropriate directory:
+
+```
+wget https://cdlisumerianunmt.s3.us-east-2.amazonaws.com/Transformer/AllCompSents/_step_14000.pt
+```
+
+Path to this directory you be mentioned in the ```Translating``` part below.
+
 ## Training
 
 ```
