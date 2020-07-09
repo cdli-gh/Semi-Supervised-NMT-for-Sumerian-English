@@ -8,7 +8,7 @@ To load a pre-trained checkpoint, run the following command in the appropriate d
 wget https://cdlisumerianunmt.s3.us-east-2.amazonaws.com/Transformer/AllCompSents/_step_14000.pt
 ```
 
-Path to this directory you be mentioned in the while [Translating](https://github.com/cdli-gh/Unsupervised-NMT-for-Sumerian-English/blob/master/translation/transformer/README.md#translating).
+Path to this directory needs to be mentioned while [Translating](https://github.com/cdli-gh/Unsupervised-NMT-for-Sumerian-English/blob/master/translation/transformer/README.md#translating).
 
 ## Training
 
