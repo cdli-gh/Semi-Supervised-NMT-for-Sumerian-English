@@ -86,13 +86,13 @@ TO DO
 For reproducing the results, refer the documentation in the sub-folders inside ```translation```.
 
 ## Mentors:
-1. Niko Schenk
-2. Ravneet Punia
+1. [Niko Schenk](https://www.uni-frankfurt.de/46551536/Niko_Schenk)
+2. [Ravneet Punia](https://in.linkedin.com/in/ravneetpunia)
 
 ## Tasks:
 
 - [x] Preparing the parallel and monolingual texts for final usage. Using methods like BPE and BBPE to tokenize the text.
 - [x] Implementing the Vanilla Transformer for Sumerian to English as well as English to Sumerian
 - [x] Back Translation using Sumerian Monolingual data
-- [ ] XLM Encoder along with a Transformer Decoder on English-Sumerian Translation.
+- [x] XLM Encoder along with a Transformer Decoder on English-Sumerian Translation.
 - [ ] Model-Level Dual Learning using tied Transformer Encoder-Decoder pairs.
