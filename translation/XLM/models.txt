@@ -19,3 +19,21 @@ python3 train.py --exp_name secondPhase_mlm \
                 --tokens_per_batch 2000 --eval_bleu true \
                 --validation_metrics 'valid_sum-en_mt_bleu' \
                 --stopping_criterion 'valid_sum-en_mt_bleu,10'
+
+#### SumEn_mlm_tlm_RestricedData ####
+
+python3 train.py --exp_name SumEn_mlm_RestrictedData \
+                --dump_path ../experiments/ \
+                --data_path ./data2/processed/sum-en/ \
+                --lgs 'sum-en' --mlm_steps 'sum,en,sum-en' \
+                --validation_metrics _valid_mlm_ppl \
+                --stopping_criterion _valid_mlm_ppl,10
+
+#### SumEn_mlm_clm_RestricedData ####
+
+python3 train.py --exp_name SumEn_mlm_RestrictedData \
+                --dump_path ../experiments/ \
+                --data_path ./data2/processed/sum-en/ \
+                --lgs 'sum-en' --mlm_steps 'sum,en' --clm_steps 'sum,en' \
+                --validation_metrics _valid_mlm_ppl \
+                --stopping_criterion _valid_mlm_ppl,10
