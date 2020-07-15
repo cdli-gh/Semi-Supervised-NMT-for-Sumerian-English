@@ -1,10 +1,3 @@
-# Copyright (c) 2019-present, Facebook, Inc.
-# All rights reserved.
-#
-# This source code is licensed under the license found in the
-# LICENSE file in the root directory of this source tree.
-#
-
 set -e
 
 
@@ -115,7 +108,9 @@ TGT_VALID_BPE=$PROC_PATH/valid.$TGT
 SRC_TEST_BPE=$PROC_PATH/test.$SRC
 TGT_TEST_BPE=$PROC_PATH/test.$TGT
 
-# valid / test parallel BPE data
+# train /valid / test parallel BPE data
+PARA_SRC_TRAIN_BPE=$PROC_PATH/train.$SRC-$TGT.$SRC
+PARA_TGT_TRAIN_BPE=$PROC_PATH/train.$SRC-$TGT.$TGT
 PARA_SRC_VALID_BPE=$PROC_PATH/valid.$SRC-$TGT.$SRC
 PARA_TGT_VALID_BPE=$PROC_PATH/valid.$SRC-$TGT.$TGT
 PARA_SRC_TEST_BPE=$PROC_PATH/test.$SRC-$TGT.$SRC
@@ -129,6 +124,8 @@ PARA_TGT_TEST_BPE1=$PROC_PATH/test.$TGT-$SRC.$TGT
 unset PARA_SRC_VALID PARA_TGT_VALID PARA_SRC_TEST PARA_TGT_TEST
 
 if [ "$SRC" == "sum" -a "$TGT" == "en" ]; then
+  PARA_SRC_TRAIN=$PARA_PATH/train.sum
+  PARA_TGT_TRAIN=$PARA_PATH/train.en
   PARA_SRC_VALID=$PARA_PATH/dev.sum
   PARA_TGT_VALID=$PARA_PATH/dev.en
   PARA_SRC_TEST=$PARA_PATH/dev.sum
@@ -268,6 +265,8 @@ cd $PARA_PATH
 if [ "$SRC" == "sum" ]; then
     cp ../../../../../dataset/dataToUse/UrIIICompSents/dev.sum ./dev.sum.sgm
     cp ../../../../../dataset/dataToUse/allCompSents/dev.eng ./dev.en.sgm
+    cp ../../../../../dataset/dataToUse/allCompSents/train.eng ./train.en.sgm
+    cp ../../../../../dataset/dataToUse/allCompSents/train.sum ./train.sum.sgm
 else
     echo "Downloading parallel data..."
     wget -c http://data.statmt.org/wmt18/translation-task/dev.tgz
@@ -277,18 +276,24 @@ else
 fi
 
 # check valid and test files are here
+if ! [[ -f "$PARA_SRC_TRAIN.sgm" ]]; then echo "$PARA_SRC_TRAIN.$SRC is not found!"; exit; fi
+if ! [[ -f "$PARA_TGT_TRAIN.sgm" ]]; then echo "$PARA_TGT_TRAIN.$TGT is not found!"; exit; fi
 if ! [[ -f "$PARA_SRC_VALID.sgm" ]]; then echo "$PARA_SRC_VALID.$SRC is not found!"; exit; fi
 if ! [[ -f "$PARA_TGT_VALID.sgm" ]]; then echo "$PARA_TGT_VALID.$TGT is not found!"; exit; fi
 if ! [[ -f "$PARA_SRC_TEST.sgm" ]];  then echo "$PARA_SRC_TEST.$SRC is not found!";  exit; fi
 if ! [[ -f "$PARA_TGT_TEST.sgm" ]];  then echo "$PARA_TGT_TEST.$TGT is not found!";  exit; fi
 
-echo "Tokenizing valid and test data..."
+echo "Tokenizing train, valid and test data..."
+eval "cat $PARA_SRC_TRAIN.sgm | $SRC_PREPROCESSING > $PARA_SRC_TRAIN"
+eval "cat $PARA_TGT_TRAIN.sgm | $TGT_PREPROCESSING > $PARA_TGT_TRAIN"
 eval "cat $PARA_SRC_VALID.sgm | $SRC_PREPROCESSING > $PARA_SRC_VALID"
 eval "cat $PARA_TGT_VALID.sgm | $TGT_PREPROCESSING > $PARA_TGT_VALID"
 eval "cat $PARA_SRC_TEST.sgm | $SRC_PREPROCESSING > $PARA_SRC_TEST"
 eval "cat $PARA_TGT_TEST.sgm | $TGT_PREPROCESSING > $PARA_TGT_TEST"
 
-echo "Applying BPE to valid and test files..."
+echo "Applying BPE to valid and test files"
+$FASTBPE applybpe $PARA_SRC_TRAIN_BPE $PARA_SRC_TRAIN $BPE_CODES $SRC_VOCAB
+$FASTBPE applybpe $PARA_TGT_TRAIN_BPE $PARA_TGT_TRAIN $BPE_CODES $TGT_VOCAB
 $FASTBPE applybpe $PARA_SRC_VALID_BPE $PARA_SRC_VALID $BPE_CODES $SRC_VOCAB
 $FASTBPE applybpe $PARA_TGT_VALID_BPE $PARA_TGT_VALID $BPE_CODES $TGT_VOCAB
 $FASTBPE applybpe $PARA_SRC_TEST_BPE  $PARA_SRC_TEST  $BPE_CODES $SRC_VOCAB
@@ -299,7 +304,9 @@ $FASTBPE applybpe $PARA_SRC_TEST_BPE1 $PARA_SRC_TEST  $BPE_CODES $SRC_VOCAB
 $FASTBPE applybpe $PARA_TGT_TEST_BPE1 $PARA_TGT_TEST  $BPE_CODES $TGT_VOCAB
 
 echo "Binarizing data..."
-rm -f $PARA_SRC_VALID_BPE.pth $PARA_TGT_VALID_BPE.pth $PARA_SRC_TEST_BPE.pth $PARA_TGT_TEST_BPE.pth
+rm -f $PARA_SRC_TRAIN_BPE.pth $PARA_TGT_TRAIN_BPE.pth $PARA_SRC_VALID_BPE.pth $PARA_TGT_VALID_BPE.pth $PARA_SRC_TEST_BPE.pth $PARA_TGT_TEST_BPE.pth
+python3 $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_SRC_TRAIN_BPE
+python3 $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_TGT_TRAIN_BPE
 python3 $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_SRC_VALID_BPE
 python3 $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_TGT_VALID_BPE
 python3 $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_SRC_TEST_BPE
@@ -309,6 +316,8 @@ python3 $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_TGT_TEST_BPE
 #
 # Link monolingual validation and test data to parallel data
 #
+ln -sf $PARA_SRC_TRAIN_BPE.pth $SRC_TRAIN_BPE.pth
+ln -sf $PARA_TGT_TRAIN_BPE.pth $TGT_TRAIN_BPE.pth
 ln -sf $PARA_SRC_VALID_BPE.pth $SRC_VALID_BPE.pth
 ln -sf $PARA_TGT_VALID_BPE.pth $TGT_VALID_BPE.pth
 ln -sf $PARA_SRC_TEST_BPE.pth  $SRC_TEST_BPE.pth
@@ -318,7 +327,6 @@ ln -sf $PARA_TGT_TEST_BPE.pth  $TGT_TEST_BPE.pth
 #
 # Summary
 #
-echo ""
 echo "===== Data summary"
 echo "Monolingual training data:"
 echo "    $SRC: $SRC_TRAIN_BPE.pth"
@@ -335,4 +343,3 @@ echo "    $TGT: $PARA_TGT_VALID_BPE.pth"
 echo "Parallel test data:"
 echo "    $SRC: $PARA_SRC_TEST_BPE.pth"
 echo "    $TGT: $PARA_TGT_TEST_BPE.pth"
-echo ""
