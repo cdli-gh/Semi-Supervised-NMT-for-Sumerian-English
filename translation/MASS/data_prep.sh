@@ -7,7 +7,7 @@ save_dir=$data_dir/processed/
 # set this relative path of MASS in your server
 user_dir=mass
 
-mkdir -p $data_dir $save_dir $mono_data_dir $para_data_dir $user_dir
+mkdir -p $data_dir $save_dir $mono_data_dir $para_data_dir
 
 # Generate Monolingual Data
 for lg in sum en
