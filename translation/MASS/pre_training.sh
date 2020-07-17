@@ -2,8 +2,8 @@ save_dir=experiments/pre-training/
 user_dir=mass
 data_dir=data/processed/
 
-seed=1234
-max_tokens=2048 # for 16GB GPUs
+seed=1826
+max_tokens=512
 update_freq=1
 dropout=0.1
 attention_heads=16
@@ -18,12 +18,12 @@ mkdir -p $save_dir
 fairseq-train $data_dir \
 	--user-dir $user_dir \
     --task xmasked_seq2seq \
-	--source-langs en,zh \
-	--target-langs en,zh \
-    --langs en,zh \
+	--source-langs en,sum \
+	--target-langs en,sum \
+    --langs en,sum \
 	--arch xtransformer \
-    --mass_steps en-en,zh-zh \
-    --memt_steps en-zh,zh-en \
+    --mass_steps en-en,sum-sum \
+    --memt_steps en-sum,sum-en \
     --save-dir $save_dir \
     --optimizer adam --adam-betas '(0.9, 0.98)' --clip-norm 0.0 \
     --lr-scheduler inverse_sqrt --lr 0.00005 --min-lr 1e-09 \
@@ -40,6 +40,6 @@ fairseq-train $data_dir \
     --max-update 100000000 --max-epoch 50 \
     --keep-interval-updates 100 --save-interval-updates 3000  --log-interval 50 \
     --share-decoder-input-output-embed \
-    --valid-lang-pairs en-zh \
+    --valid-lang-pairs en-sum \
 	--word_mask ${word_mask} \
 	--ddp-backend=no_c10d
