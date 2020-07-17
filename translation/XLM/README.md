@@ -49,10 +49,10 @@ python3 train.py --exp_name <experiment_name> \
 ### Prepare Data to Test on
 
 ```
-sh inferPre.sh <SRC_LANG>
-               <SRC_PATH>
-               <BPE_CODES>
-               <RELOAD_VOCAB>
+sh inferPre.sh <SRC_LANG> \
+               <SRC_PATH> \
+               <BPE_CODES> \
+               <RELOAD_VOCAB> \
                <SAVE_DIR>
 ```
 
