@@ -29,8 +29,9 @@ Keep your data files in the following format:
      ├─ dict.en.txt
      └─ dict.sum.txt
 ```
+The files under mono are monolingual data, while under para are bilingual data. dict.en(sum).txt in different directory should be identical. The dictionary for different language can be different.
 
-Run the following command to preprocess data:
+Run the following command to preprocess the data:
 
 ```
 sh data_prep.sh
@@ -51,3 +52,8 @@ sh fine_tuning.sh
 ```
 
 Model weights and logs would be stored inside the ```experiments``` folder.
+
+
+## References
+
+- [MASS with Supervised Pre-training](https://github.com/microsoft/MASS/MASS-supNMT)
