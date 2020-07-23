@@ -161,7 +161,7 @@ class Dataset(object):
     def remove_short_sentences(self, min_len):
         assert min_len >= 0
         if min_len == 0:
-            return 
+            return
         init_size = len(self.pos)
         indices = np.arange(len(self.pos))
         indices = indices[self.lengths[indices] >= min_len]
@@ -303,11 +303,18 @@ class ParallelDataset(Dataset):
         Remove empty sentences.
         """
         init_size = len(self.pos1)
-        indices = np.arange(len(self.pos1))
-        indices = indices[self.lengths1[indices] > 0]
-        indices = indices[self.lengths2[indices] > 0]
-        self.pos1 = self.pos1[indices]
-        self.pos2 = self.pos2[indices]
+        try:
+            indices = np.arange(len(self.pos1))
+            indices = indices[self.lengths1[indices] > 0]
+            indices = indices[self.lengths2[indices] > 0]
+            self.pos1 = self.pos1[indices]
+            self.pos2 = self.pos2[indices]
+        except:
+            indices = np.arange(len(self.pos2))
+            indices = indices[self.lengths1[indices] > 0]
+            indices = indices[self.lengths2[indices] > 0]
+            self.pos1 = self.pos1[indices]
+            self.pos2 = self.pos2[indices]
         self.lengths1 = self.pos1[:, 1] - self.pos1[:, 0]
         self.lengths2 = self.pos2[:, 1] - self.pos2[:, 0]
         logger.info("Removed %i empty sentences." % (init_size - len(indices)))
