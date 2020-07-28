@@ -36,6 +36,9 @@ class XTransformerEncoder(TransformerEncoder):
 
         # compute padding mask
         encoder_padding_mask = src_tokens.eq(self.padding_idx) | src_tokens.eq(self.mask_idx)
+        # print(encoder_padding_mask)
+        # print(src_tokens.eq(self.padding_idx))
+        # print(src_tokens.eq(self.mask_idx))
         if not encoder_padding_mask.any():
             encoder_padding_mask = None
 
