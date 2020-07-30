@@ -15,15 +15,18 @@ Previous models that have been used to carry out English<-->Sumerian Translation
 
 This huge amount of monolingual data can be used to improve the NMT system by combining it with techniques like Back Translation, Tranfer Learning and Dual Learning which have proved specially useful for Low-Resource languages like Sumerian which have a limited amount of parallel data. Moreover, we also look to implement models like XLM and MASS for the same.
 
+<details>
+<summary> Requirements </summary> 
+- Python 3.5.2 or higher <br>
+- NumPy <br>
+- Pandas <br>
+- PyTorch <br>
+- Torch Text <br>
+- OpenNMT-py <br>
+- fairseq <br>
 
-## Requirements
-Python 3.5.2 or higher <br>
-NumPy <br>
-Pandas <br>
-PyTorch <br>
-Torch Text <br>
-OpenNMT-py <br>
-fairseq <br>
+</details>
+
 
 ## Repository Structure
 
