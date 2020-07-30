@@ -30,30 +30,30 @@ fairseq <br>
 ```
 |__ translation/ --> all translation models used for Sumerian-English Translation 
         |__ transformer/ --> Supervised NMT using Vanilla Transformer
-                |__ runTransformerSumEn.sh/ --> to perform training
-                |__ README.md/ --> lists down all checkpoints and steps to run training and inference.
+                |__ runTransformerSumEn.sh --> to perform training
+                |__ README.md --> lists down all checkpoints and steps to run training and inference.
         |__ backtranslation/ --> fairseq usgae for Back Translation using Vanilla Transformers
         |__ backtranslation-onmt/ --> OpenNMT usage for Back Translation using Vanilla Transformers
-                |__ backtranslateONMT.py/ --> to translate all Sumerian Text in a given shard using weights from the previous iteration
-                |__ stack.py/ --> To stack the backtranslated sentences to the parallel corpora for training
-                |__ runTransformerSumEn.sh/ --> To retrain the transformer model using the updated parallel data from the last step
-                |__ README.md/ --> lists down all checkpoints and steps to run training and inference.
+                |__ backtranslateONMT.py --> to translate all Sumerian Text in a given shard using weights from the previous iteration
+                |__ stack.py --> To stack the backtranslated sentences to the parallel corpora for training
+                |__ runTransformerSumEn.sh --> To retrain the transformer model using the updated parallel data from the last step
+                |__ README.md --> lists down all checkpoints and steps to run training and inference.
         |__ XLM/ --> Unsupervised NMT using Cross-Lingual Langual Model Pretraining
                 |__ XLM/ --> directory containing all model, data preperation and inference scripts
-                |__ models.txt/ --> lists the possible commands and parameter combinations for XLM training and inference.
-                |__ README.md/ --> lists down all checkpoints and steps to run training and inference.
+                |__ models.txt --> lists the possible commands and parameter combinations for XLM training and inference.
+                |__ README.md --> lists down all checkpoints and steps to run training and inference.
         |__ MASS-unmt/ --> Unsupervised NMT using Masked Sequence to Sequence Pretraining
-                |__ data_prep.sh/ --> to prepare and process data for training 
-                |__ pre_training.sh/ --> to carry out pre training using Unsupervised Objectives
-                |__ fine_tuning.sh/ --> to carry out fine tuning using parallel data
-                |__ translate.sh/ --> to carry out inference using the specified checkpoints
-                |__ README.md/ --> lists down all checkpoints and steps to run training and inference.
+                |__ data_prep.sh --> to prepare and process data for training 
+                |__ pre_training.sh --> to carry out pre training using Unsupervised Objectives
+                |__ fine_tuning.sh --> to carry out fine tuning using parallel data
+                |__ translate.sh --> to carry out inference using the specified checkpoints
+                |__ README.md --> lists down all checkpoints and steps to run training and inference.
         |__ MASS-snmt/ --> Unsupervised NMT using Masked Sequence to Sequence Pretraining 
-                |__ data_prep.sh/ --> to prepare and process data for training 
-                |__ pre_training.sh/ --> to carry out pre training using Unsupervised Objectives
-                |__ fine_tuning.sh/ --> to carry out fine tuning using parallel data
-                |__ translate.sh/ --> to carry out inference using the specified checkpoints
-                |__ README.md/ --> lists down all checkpoints and steps to run training and inference.
+                |__ data_prep.sh --> to prepare and process data for training 
+                |__ pre_training.sh --> to carry out pre training using Unsupervised Objectives
+                |__ fine_tuning.sh --> to carry out fine tuning using parallel data
+                |__ translate.sh --> to carry out inference using the specified checkpoints
+                |__ README.md --> lists down all checkpoints and steps to run training and inference.
 
 |__ dataset/ --> All Sumerian Language related textual dataset by CDLI
         |__ README.md/ --> Gives detailed description of the dataset and the different sub-folders.
