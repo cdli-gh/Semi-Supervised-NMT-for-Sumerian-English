@@ -59,7 +59,7 @@ This huge amount of monolingual data can be used to improve the NMT system by co
                 |__ README.md --> lists down all checkpoints and steps to run training and inference.
 
 |__ dataset/ --> All Sumerian Language related textual dataset by CDLI
-        |__ README.md/ --> Gives detailed description of the dataset and the different sub-folders.
+        |__ README.md --> Gives detailed description of the dataset and the different sub-folders.
         |__ dataToUse/ --> Contains all the parallel data divided among traing, test and dev sets, in 4 different categories
                 |__ UrIIICompSents/ --> UrIII Admin Data with complete sentence translations
                 |__ AllCompSents/ --> All kinds of Sumerian Data with complete sentence translations
