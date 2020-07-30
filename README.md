@@ -25,57 +25,48 @@ Torch Text <br>
 OpenNMT-py <br>
 fairseq <br>
 
-
 ## Repository Structure
 
-<details><summary><b>dataset</b></summary>
-  <p>
-    Contains the datasets used for training and validating Sumerian<->English NMT. 
-     <details><summary><b>dataToUse</b></summary>
-          <p>
-            Contains all the parallel data divided among traing, test and dev sets, in the 4 different categories:
-            - UrIIICompSents <br>
-            - AllCompSents <br>
-            - UrIIILineByLine <br>
-            - AllLineByLIne <br>
-          </p>
-    </details>
-     <details><summary><b>cleaned</b></summary>
-          <p>
-            Contains data after cleaning using the helper scripts, contains the monolingual data as well:
-            - UrIIICompSents <br>
-            - AllCompSents <br>
-            - UrIIILineByLine <br>
-            - AllLineByLIne <br>
-          </p>
-    </details>
-    <details><summary><b>orginal</b></summary>
-      <p> Contains all of the data before cleaning </br>
-    </details>
-    <details><summary><b>oldFormat</b></summary>
-      <p> Contains data from last year, for comparison </br>
-    </details>
-  </p>
-</details>
-    
-<details><summary><b>translation</b></summary>
-  <p>
-    <details><summary><b>transformer</b></summary>
-          <p>
-            Contains implemntation of the Vanilla Transformer using parallel data, for Sumerian-English
-          </p>
-    </details>
-     <details><summary><b>backtranslation</b></summary>
-          <p>
-            Makes use of fairseq to carry out Sumerian-English Back Translation using Sumerian monolingual data
-          </p>
-    </details>
-    <details><summary><b>backtranslation-onmt</b></summary>
-          <p>
-            Makes use of fairseq and OpenNMT to carry out Sumerian-English Back Translation using Sumerian monolingual data
-          </p>
-    </details>
-</details>
+```
+|__ translation/ --> all translation models used for Sumerian-English Translation 
+        |__ transformer/ --> Supervised NMT using Vanilla Transformer
+                |__ runTransformerSumEn.sh/ --> to perform training
+                |__ README.md/ --> lists down all checkpoints and steps to run training and inference.
+        |__ backtranslation/ --> fairseq usgae for Back Translation using Vanilla Transformers
+        |__ backtranslation-onmt/ --> OpenNMT usage for Back Translation using Vanilla Transformers
+                |__ backtranslateONMT.py/ --> to translate all Sumerian Text in a given shard using weights from the previous iteration
+                |__ stack.py/ --> To stack the backtranslated sentences to the parallel corpora for training
+                |__ runTransformerSumEn.sh/ --> To retrain the transformer model using the updated parallel data from the last step
+                |__ README.md/ --> lists down all checkpoints and steps to run training and inference.
+        |__ XLM/ --> Unsupervised NMT using Cross-Lingual Langual Model Pretraining
+                |__ XLM/ --> directory containing all model, data preperation and inference scripts
+                |__ models.txt/ --> lists the possible commands and parameter combinations for XLM training and inference.
+                |__ README.md/ --> lists down all checkpoints and steps to run training and inference.
+        |__ MASS-unmt/ --> Unsupervised NMT using Masked Sequence to Sequence Pretraining
+                |__ data_prep.sh/ --> to prepare and process data for training 
+                |__ pre_training.sh/ --> to carry out pre training using Unsupervised Objectives
+                |__ fine_tuning.sh/ --> to carry out fine tuning using parallel data
+                |__ translate.sh/ --> to carry out inference using the specified checkpoints
+                |__ README.md/ --> lists down all checkpoints and steps to run training and inference.
+        |__ MASS-snmt/ --> Unsupervised NMT using Masked Sequence to Sequence Pretraining 
+                |__ data_prep.sh/ --> to prepare and process data for training 
+                |__ pre_training.sh/ --> to carry out pre training using Unsupervised Objectives
+                |__ fine_tuning.sh/ --> to carry out fine tuning using parallel data
+                |__ translate.sh/ --> to carry out inference using the specified checkpoints
+                |__ README.md/ --> lists down all checkpoints and steps to run training and inference.
+
+|__ dataset/ --> All Sumerian Language related textual dataset by CDLI
+        |__ README.md/ --> Gives detailed description of the dataset and the different sub-folders.
+        |__ dataToUse/ --> Contains all the parallel data divided among traing, test and dev sets, in 4 different categories
+                |__ UrIIICompSents/ --> UrIII Admin Data with complete sentence translations
+                |__ AllCompSents/ --> All kinds of Sumerian Data with complete sentence translations
+                |__ UrIIILineByLine/ --> UrIII Admin Data with line by line translations
+                |__ AllLineByLIne/ --> All kinds of Sumerian Dtaa with line by line translations
+        |__ cleaned/ --> Contains data after cleaning using the helper scripts, including the monolingual data. Divided in the same 4 categories.
+        |__ original/ --> Contains all of the data before cleaning
+        |__ oldFormat/ --> Contains data from last year, for comparison
+        
+```
 
 (Refer to the README of each folder and sub-folder to know them in more detail)
 
@@ -94,5 +85,7 @@ For reproducing the results, refer the documentation in the sub-folders inside `
 - [x] Preparing the parallel and monolingual texts for final usage. Using methods like BPE and BBPE to tokenize the text.
 - [x] Implementing the Vanilla Transformer for Sumerian to English as well as English to Sumerian
 - [x] Back Translation using Sumerian Monolingual data
-- [x] XLM Encoder along with a Transformer Decoder on English-Sumerian Translation.
-- [ ] Model-Level Dual Learning using tied Transformer Encoder-Decoder pairs.
+- [x] Transfer Learning from pre-trained models of other languages
+- [x] XLM for Unsupervised NMT.
+- [x] MASS for Unsupervised NMT.
+- [ ] MASS for Semi-Supervised NMT.
