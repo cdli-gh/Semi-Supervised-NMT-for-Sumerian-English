@@ -15,19 +15,16 @@ do
     echo "########### Back Translating Sumerian using previous weights ############"
     python3 backtranslateONMT.py --srcFile shard${shard}.sum --model ${weightsDir}/${shard}st/_step_10000.pt
     echo "########### Stacking ############"
-<<<<<<< HEAD
     cp ./backed/train.sum ./backed/train${shard}.sum
     cp ./backed/train.eng ./backed/train${shard}.eng
     python3 stack.py --backSrc ${shardSrcDir}/shard${shard}.sum --backTgt ${shardBackDir}/shard${shard}.eng
     mkdir ${weightsDir}/${val}st/
     echo "########### Re-Training ###########"
     sh runTransformerSumEn.sh ../backed ../${weightsDir}/${val}st/
-=======
     python3 stack.py --backSrc ${shardSrcDir}/shard${shard}.sum --backTgt ${shardBackDir}/shard${shard}.eng
     mkdir ${weightsDir}/${val}st/
     echo "########### Re-Training ###########"
     sh runTransformerSumEn.sh ./backed ${weightsDir}/${val}st/
->>>>>>> 9852ff06c444ff221e4577815c7dcac64a41a054
     echo "########### Evaluating #############"
     onmt_translate -model ${weightsDir}/${val}st/_step_10000.pt -src ${evalSrcDir}/evaluate.sum -output ${evalTgtDir}/predd_eng${val}.txt -replace_unk -verbose
   fi
