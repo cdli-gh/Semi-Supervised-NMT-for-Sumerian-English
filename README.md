@@ -92,3 +92,8 @@ For reproducing the results, refer the documentation in the sub-folders inside `
 - [x] XLM for Unsupervised NMT.
 - [x] MASS for Unsupervised NMT.
 - [ ] MASS for Semi-Supervised NMT.
+
+
+...
+
+For an end-to-end translation pipeline for Sumerian-English, refer to the [cdli-gh/Sumerian_Translation-Pipeline](https://github.com/cdli-gh/Sumerian-Translation-Pipeline) project, where you can give an ATF file containing Sumerian sentences as input and get an ATF file with corresponding English translations as the output.
