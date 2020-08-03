@@ -1,4 +1,4 @@
-# MASS
+# MASS (Unsupervised)
 
 ## Install the specific requirements:
 
@@ -22,8 +22,8 @@ Keep your data files in the following format:
   |  ├─ dict.en.txt
   |  └─ dict.sum.txt
   └─ para/
-     ├─ train.en
-     ├─ train.sum
+     ├─ test.en
+     ├─ test.sum
      ├─ valid.en
      ├─ valid.sum
      ├─ dict.en.txt
@@ -56,4 +56,4 @@ Model weights and logs would be stored inside the ```experiments``` folder.
 
 ## References
 
-- [MASS with Supervised Pre-training](https://github.com/microsoft/MASS/MASS-supNMT)
+- [MASS with Unsupervised Pre-training](https://github.com/microsoft/MASS/tree/master/MASS-unsupNMT)
