@@ -1,4 +1,4 @@
-# MASS
+# MASS (Supervised)
 
 ## Install the specific requirements:
 
