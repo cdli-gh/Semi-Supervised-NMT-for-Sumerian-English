@@ -11,7 +11,7 @@ python3 train.py --exp_name SumEn_mlm_RestrictedData \
 
 python3 train.py --exp_name secondPhase_mlm \
                 --dump_path ../experiments/ \
-                --reload_model '../experiments/<folder_name>/checkpoint.pth,../experiments/<folder_name>/checkpoint.pth'
+                --reload_model '../experiments/<folder_name>/checkpoint.pth,../experiments/<folder_name>/checkpoint.pth' \
                 --data_path ./data2/processed/sum-en/ \
                 --lgs 'sum-en' --ae_steps 'sum,en' --bt_steps 'sum-en-sum,en-sum-en' \
                 --word_shuffle 3 --word_dropout 0.1 --word_blank 0.1 \
@@ -22,18 +22,70 @@ python3 train.py --exp_name secondPhase_mlm \
 
 #### SumEn_mlm_tlm_RestricedData ####
 
-python3 train.py --exp_name SumEn_mlm_RestrictedData \
+python3 train.py --exp_name SumEn_mlm_tlm_RestrictedData \
                 --dump_path ../experiments/ \
                 --data_path ./data2/processed/sum-en/ \
                 --lgs 'sum-en' --mlm_steps 'sum,en,sum-en' \
                 --validation_metrics _valid_mlm_ppl \
                 --stopping_criterion _valid_mlm_ppl,10
 
+python3 train.py --exp_name secondPhase_mlm_tlm \
+                --dump_path ../experiments/ \
+                --reload_model '../experiments/<folder_name>/checkpoint.pth,../experiments/<folder_name>/checkpoint.pth' \
+                --data_path ./data2/processed/sum-en/ \
+                --lgs 'sum-en' --ae_steps 'sum,en' --bt_steps 'sum-en-sum,en-sum-en' \
+                --word_shuffle 3 --word_dropout 0.1 --word_blank 0.1 \
+                --encoder_only false \
+                --tokens_per_batch 2000 --eval_bleu true \
+                --validation_metrics 'valid_sum-en_mt_bleu' \
+                --stopping_criterion 'valid_sum-en_mt_bleu,10'
+
 #### SumEn_mlm_clm_RestricedData ####
 
-python3 train.py --exp_name SumEn_mlm_RestrictedData \
+python3 train.py --exp_name SumEn_mlm_clm_RestrictedData \
                 --dump_path ../experiments/ \
                 --data_path ./data2/processed/sum-en/ \
                 --lgs 'sum-en' --mlm_steps 'sum,en' --clm_steps 'sum,en' \
                 --validation_metrics _valid_mlm_ppl \
                 --stopping_criterion _valid_mlm_ppl,10
+
+#### SumEn_mlm_tlm_AugmentedData ####
+
+python3 train.py --exp_name SumEn_mlm_tlm_AugmentedData \
+                --dump_path ../experiments/ \
+                --data_path ./data4/processed/sum-en/ \
+                --lgs 'sum-en' --mlm_steps 'sum,en,sum-en' \
+                --validation_metrics _valid_mlm_ppl \
+                --stopping_criterion _valid_mlm_ppl,10
+
+python3 train.py --exp_name secondPhase_AugmentedData \
+                --dump_path ../experiments/ \
+                --reload_model '../experiments/<folder_name>/checkpoint.pth,../experiments/<folder_name>/checkpoint.pth' \
+                --data_path ./data4/processed/sum-en/ \
+                --lgs 'sum-en' --ae_steps 'sum,en' --bt_steps 'sum-en-sum,en-sum-en' \
+                --word_shuffle 3 --word_dropout 0.1 --word_blank 0.1 \
+                --encoder_only false \
+                --tokens_per_batch 2000 --eval_bleu true \
+                --validation_metrics 'valid_sum-en_mt_bleu' \
+                --stopping_criterion 'valid_sum-en_mt_bleu,10'
+
+#### SumEn_supervised_NMT ####
+
+python3 train.py --exp_name secondPhase_SemiSup \
+                --dump_path ../experiments/ \
+                --reload_model '../experiments/<folder_name>/checkpoint.pth,../experiments/<folder_name>/checkpoint.pth' \
+                --data_path ./data2/processed/sum-en/ \
+                --lgs 'sum-en' --mt_steps 'sum-en, en-sum' \
+                --bt_steps 'sum-en-sum,en-sum-en' \
+                --word_shuffle 3 --word_dropout 0.1 --word_blank 0.1 \
+                --encoder_only false \
+                --tokens_per_batch 2000 --eval_bleu true \
+                --validation_metrics 'valid_sum-en_mt_bleu' \
+                --stopping_criterion 'valid_sum-en_mt_bleu,10'
+
+#### inference
+
+cat evaluate.sum.bpe | \
+        python translate.py --exp_name output_MLM_TLM \
+        --src_lang sum --tgt_lang en \
+        --model_path ../experiments/<folder_name>/checkpoint.pth --output_path ./
