@@ -76,7 +76,9 @@ This huge amount of monolingual data can be used to improve the NMT system by co
 SOON
 
 
-**(Refer to the README of each folder and sub-folder to throughly know them and to reproduce the [translation](https://github.com/cdli-gh/Semi-Supervised-NMT-for-Sumerian-English/tree/master/translation) models)**
+<p align="center">
+  <b> Refer to the README of each folder and sub-folder to throughly know them and to reproduce the <a href="https://github.com/cdli-gh/Semi-Supervised-NMT-for-Sumerian-English/tree/master/translation">translation</a> models </b>
+ </p>
 
 ## Mentors:
 1. [Niko Schenk](https://www.uni-frankfurt.de/46551536/Niko_Schenk)
@@ -95,4 +97,4 @@ SOON
 
 ...
 
-For an end-to-end translation pipeline making use of translation models from this repository, refer to the [cdli-gh/Sumerian_Translation-Pipeline](https://github.com/cdli-gh/Sumerian-Translation-Pipeline) project, where you can give an ATF file containing Sumerian sentences as input and get an ATF file with corresponding English translations as the output.
+For an end-to-end translation pipeline making use of translation models from this repository, refer to the <a href="https://github.com/cdli-gh/Sumerian-Translation-Pipeline">cdli-gh/Sumerian_Translation-Pipeline</a> project, where you can give an ATF file containing Sumerian sentences as input and get an ATF file with corresponding English translations as the output.
