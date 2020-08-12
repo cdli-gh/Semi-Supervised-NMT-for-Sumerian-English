@@ -71,14 +71,13 @@ This huge amount of monolingual data can be used to improve the NMT system by co
         
 ```
 
+<p align="center">
+  <b> Refer to the README of each folder and sub-folder to throughly know them and to reproduce the <a href="https://github.com/cdli-gh/Semi-Supervised-NMT-for-Sumerian-English/tree/master/translation">translation</a> models </b>
+</p>
+
 ## Results
 
 SOON
-
-
-<p align="center">
-  <b> Refer to the README of each folder and sub-folder to throughly know them and to reproduce the <a href="https://github.com/cdli-gh/Semi-Supervised-NMT-for-Sumerian-English/tree/master/translation">translation</a> models </b>
- </p>
 
 ## Mentors:
 1. [Niko Schenk](https://www.uni-frankfurt.de/46551536/Niko_Schenk)
