@@ -6,6 +6,8 @@
 
 ```
 sh data_prep_2.sh --src sum --tgt en
+
+sh prepFinal.sh data2
 ```
 
 ### Pre-Training
@@ -31,6 +33,8 @@ add ```--clm_steps 'sum,en'```
 
 ### Second Phase of Training
 
+#### Unsupervised:
+
 ```
 python3 train.py --exp_name <experiment_name> \
                 --dump_path <weights_save_dir> \
@@ -38,6 +42,20 @@ python3 train.py --exp_name <experiment_name> \
                 --data_path ./data2/processed/sum-en/ \
                 --lgs 'sum-en' --ae_steps 'sum,en' --bt_steps 'sum-en-sum,en-sum-en' \
                 --word_shuffle 3 --word_dropout 0.1 --word_blank 0.1 \
+                --encoder_only false \
+                --tokens_per_batch 2000 --eval_bleu true \
+                --validation_metrics 'valid_sum-en_mt_bleu' \
+                --stopping_criterion 'valid_sum-en_mt_bleu,10'
+```
+
+#### Semi-Supervised:
+
+```
+python3 train.py --exp_name <experiment_name> \
+                --dump_path <weights_save_dir> \
+                --reload_model <weights_save_dir>/<folder_name>/checkpoint.pth,<weights_save_dir>/<folder_name>/checkpoint.pth'
+                --data_path ./data2/processed/sum-en/ \
+                --lgs 'sum-en' --mt_steps 'sum-en' --bt_steps 'sum-en-sum,en-sum-en' \
                 --encoder_only false \
                 --tokens_per_batch 2000 --eval_bleu true \
                 --validation_metrics 'valid_sum-en_mt_bleu' \
