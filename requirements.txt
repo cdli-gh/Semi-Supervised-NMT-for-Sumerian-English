@@ -82,7 +82,7 @@ pandocfilters==1.4.2
 parso==0.7.0
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow==7.0.0
+Pillow>=7.1.0
 pipreqs==0.4.10
 portalocker==1.7.0
 pretrainedmodels==0.7.4
