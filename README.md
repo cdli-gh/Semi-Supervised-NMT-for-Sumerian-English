@@ -8,7 +8,7 @@
   <i> English: </i> Basket-of-tablets: therefroms, restitutions, debits, and credits, of Lukalla are here; ...
 </p>
 
-# Sumerian-English Unsupervised Neural Machine Translation
+# Sumerian-English Neural Machine Translation
 As a part of the MTAAC project at CDLI, we aim to build an end-to-end NMT Pipeline while making use of the extensive monolingual Sumerian Data. 
 
 Previous models that have been used to carry out English<-->Sumerian Translation have only made use of the available parallel corpora. Presently we have only about 50K extracted sentences for both languages in the parallel corpora, whereas around 1.47M sentences in the Sumerian monolingual corpus. 
@@ -91,9 +91,9 @@ For reproducing the results, refer the documentation in the sub-folders inside `
 - [x] Transfer Learning from pre-trained models of other languages
 - [x] XLM for Unsupervised NMT.
 - [x] MASS for Unsupervised NMT.
-- [ ] MASS for Semi-Supervised NMT.
+- [x] MASS for Semi-Supervised NMT.
 
 
 ...
 
-For an end-to-end translation pipeline for Sumerian-English, refer to the [cdli-gh/Sumerian_Translation-Pipeline](https://github.com/cdli-gh/Sumerian-Translation-Pipeline) project, where you can give an ATF file containing Sumerian sentences as input and get an ATF file with corresponding English translations as the output.
+For an end-to-end translation pipeline making use of translation models from this repository, refer to the [cdli-gh/Sumerian_Translation-Pipeline](https://github.com/cdli-gh/Sumerian-Translation-Pipeline) project, where you can give an ATF file containing Sumerian sentences as input and get an ATF file with corresponding English translations as the output.
