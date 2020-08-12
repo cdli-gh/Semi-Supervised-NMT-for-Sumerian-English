@@ -41,7 +41,7 @@ This huge amount of monolingual data can be used to improve the NMT system by co
                 |__ stack.py --> To stack the backtranslated sentences to the parallel corpora for training
                 |__ runTransformerSumEn.sh --> To retrain the transformer model using the updated parallel data from the last step
                 |__ README.md --> lists down all checkpoints and steps to run training and inference.
-        |__ XLM/ --> Unsupervised NMT using Cross-Lingual Langual Model Pretraining
+        |__ XLM/ --> Unsupervised and Semi-Supervised NMT using Cross-Lingual Langual Model Pretraining
                 |__ XLM/ --> directory containing all model, data preperation and inference scripts
                 |__ models.txt --> lists the possible commands and parameter combinations for XLM training and inference.
                 |__ README.md --> lists down all checkpoints and steps to run training and inference.
@@ -71,13 +71,12 @@ This huge amount of monolingual data can be used to improve the NMT system by co
         
 ```
 
-(Refer to the README of each folder and sub-folder to know them in more detail)
-
 ## Results
 
-TO DO
+SOON
 
-For reproducing the results, refer the documentation in the sub-folders inside ```translation```.
+
+**(Refer to the README of each folder and sub-folder to throughly know them and to reproduce the [translation](https://github.com/cdli-gh/Semi-Supervised-NMT-for-Sumerian-English/tree/master/translation) models)**
 
 ## Mentors:
 1. [Niko Schenk](https://www.uni-frankfurt.de/46551536/Niko_Schenk)
