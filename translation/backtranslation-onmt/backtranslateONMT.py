@@ -9,11 +9,8 @@ parser.add_argument('--model', type=str, default='../../weights/BT/1st/weights_s
 
 args = parser.parse_args()
 
-<<<<<<< HEAD
-saveName = 'shard' + str(int(args.model.split('/')[-2][-3])) + '.eng'
-=======
+# saveName = 'shard' + str(int(args.model.split('/')[-2][-3])) + '.eng'
 saveName = 'shard' + str(int(args.model.split('/')[-2][-3])+1) + '.eng'
->>>>>>> 9852ff06c444ff221e4577815c7dcac64a41a054
 
 print(args.srcFile)
 if(saveName not in os.listdir(args.savedir)):
