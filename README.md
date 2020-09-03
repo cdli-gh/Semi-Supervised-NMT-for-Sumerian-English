@@ -90,8 +90,10 @@ SOON
 - [x] Back Translation using Sumerian Monolingual data
 - [x] Transfer Learning from pre-trained models of other languages
 - [x] XLM for Unsupervised NMT.
+- [x] XLM for Semi-Supervised NMT
 - [x] MASS for Unsupervised NMT.
 - [x] MASS for Semi-Supervised NMT.
+- [x] Pre-training using Augmented Data
 
 
 ...
