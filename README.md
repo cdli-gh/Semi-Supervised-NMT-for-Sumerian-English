@@ -99,7 +99,7 @@ This huge amount of monolingual data can be used to improve the NMT system by co
 </p>
 
 <p align="center">
-  <b> Figure-3:</b> Feature Ablation and attention Attributions, respectively, for a span of input and output text through the Data Augmented XLM</i> <br> 
+  <b> Figure-3:</b> Feature Ablation and attention Attributions, respectively,<br>for a span of input and output text through the Data Augmented XLM</i> <br> 
 </p>
 
 
