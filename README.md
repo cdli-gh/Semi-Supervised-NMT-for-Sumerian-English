@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <b> Figure: </b> Shows a Cuneiform inscription, extracted from actual tablets.<br>
+  <b> Figure-1: </b> Shows a Cuneiform inscription, extracted from actual tablets.<br>
   <i> Sumerian: </i> pisan-dub-ba sza3-bi su-ga sag-nig2-gur11-ra u3 zi-ga lu2-kal-la i3-gal2 ... <br>
   <i> English: </i> Basket-of-tablets: therefroms, restitutions, debits, and credits, of Lukalla are here; ...
 </p>
@@ -76,8 +76,24 @@ This huge amount of monolingual data can be used to improve the NMT system by co
 </p>
 
 ## Results
+<p align="center">
+  <img src="https://github.com/cdli-gh/Unsupervised-NMT-for-Sumerian-English/blob/master/nmt_results.png" width="60%"/>
+</p>
 
-SOON
+<p align="center">
+  <b> Table-1: </b> Sumerian-English Machine Translation.<br>All numeric values other than those in Human Evaluation represent the BLEU Score.<br>
+</p>
+
+## Visualisations and Interpretations 
+<p align="center">
+  <img src="https://github.com/cdli-gh/Unsupervised-NMT-for-Sumerian-English/blob/master/highlights.png" width="100%"/>
+</p>
+
+<p align="center">
+  <b> Figure-2:</b> Selected output tokens for Sumerian Input text of <i>”sze-ba geme2 usz-bar kiszib3 ur-dasznan ugula”</i>, which translates to <i>”barley rations of the female weavers under seal of UrAnan the foreman”</i> <br> 
+</p>
+<!-- <p style="color: #00FF00">Green</p> and <p style="color: #FF0000">Red</p> fonts represent the correct and wrong output, respectively, while the <p style="background-color: #00FF00">Green</p> and <p style="background-color: #FF0000">Red</p> highlights represent positive and negative attributions, respectively. -->
+
 
 ## Mentors:
 1. [Niko Schenk](https://www.uni-frankfurt.de/46551536/Niko_Schenk)
