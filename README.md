@@ -94,6 +94,14 @@ This huge amount of monolingual data can be used to improve the NMT system by co
 </p>
 <!-- <p style="color: #00FF00">Green</p> and <p style="color: #FF0000">Red</p> fonts represent the correct and wrong output, respectively, while the <p style="background-color: #00FF00">Green</p> and <p style="background-color: #FF0000">Red</p> highlights represent positive and negative attributions, respectively. -->
 
+<p align="center">
+  <img src="https://github.com/cdli-gh/Semi-Supervised-NMT-for-Sumerian-English/blob/master/heatmaps.png" width="90%"/>
+</p>
+
+<p align="center">
+  <b> Figure-3:</b> Feature Ablation and attention Attributions, respectively, for a span of input and output text through the Data Augmented XLM</i> <br> 
+</p>
+
 
 ## Mentors:
 1. [Niko Schenk](https://www.uni-frankfurt.de/46551536/Niko_Schenk)
@@ -110,7 +118,7 @@ This huge amount of monolingual data can be used to improve the NMT system by co
 - [x] MASS for Unsupervised NMT.
 - [x] MASS for Semi-Supervised NMT.
 - [x] Pre-training using Augmented Data
-
+- [x] Interpretation of the NMT Models
 
 ...
 
