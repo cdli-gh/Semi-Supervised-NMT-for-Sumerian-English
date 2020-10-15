@@ -27,6 +27,13 @@ This huge amount of monolingual data can be used to improve the NMT system by co
 
 </details>
 
+Table of Contents
+=================
+
+* [Repository Structure](#repository-structure)
+* [Results](#results)
+* [Visualisations and Interpretations](#visualisations-and-interpretations)
+* [Tasks:](#tasks)
 
 ## Repository Structure
 
