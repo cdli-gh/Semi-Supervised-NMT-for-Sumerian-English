@@ -118,7 +118,7 @@ python-xapp==1.8.1
 python-xlib==0.20
 pytz==2020.1
 pyxdg==0.26
-PyYAML==5.3.1
+PyYAML==5.4
 pyzmq==19.0.1
 regex==2020.5.14
 reportlab==3.4.0
