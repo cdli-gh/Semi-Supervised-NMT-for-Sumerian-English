@@ -160,7 +160,7 @@ traitlets==4.3.3
 typing==3.7.4.1
 ubuntu-drivers-common==0.0.0
 ufw==0.36
-urllib3==1.25.9
+urllib3==1.26.5
 virtualenv==15.1.0
 waitress==1.4.4
 wcwidth==0.1.9
