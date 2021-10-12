@@ -73,7 +73,7 @@ numba==0.47.0
 numpy==1.19.0
 oauthlib==3.1.0
 onboard==1.4.1
-opencv-python==4.1.2.30
+opencv-python==4.2.0.32
 OpenNMT-py==1.1.1
 packaging==20.4
 PAM==0.4.2
