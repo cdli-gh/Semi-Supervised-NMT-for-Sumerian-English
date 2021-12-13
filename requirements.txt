@@ -57,7 +57,7 @@ Lasagne==0.1
 librosa==0.7.2
 llvmlite==0.31.0
 louis==3.5.0
-lxml==4.6.3
+lxml==4.6.5
 macaroonbakery==1.1.3
 Mako==1.0.7
 Markdown==3.2.2
