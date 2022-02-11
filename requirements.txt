@@ -70,7 +70,7 @@ nemo-emblems==4.4.0
 netifaces==0.10.4
 notebook==6.4.1
 numba==0.47.0
-numpy==1.19.0
+numpy==1.21.0
 oauthlib==3.1.0
 onboard==1.4.1
 opencv-python==4.2.0.32
