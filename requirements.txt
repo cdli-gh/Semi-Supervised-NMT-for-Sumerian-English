@@ -162,7 +162,7 @@ ubuntu-drivers-common==0.0.0
 ufw==0.36
 urllib3==1.26.5
 virtualenv==15.1.0
-waitress==1.4.4
+waitress==2.1.1
 wcwidth==0.1.9
 webencodings==0.5.1
 Werkzeug==1.0.1
