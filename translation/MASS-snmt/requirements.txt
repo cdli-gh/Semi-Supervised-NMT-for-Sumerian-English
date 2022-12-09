@@ -1,4 +1,4 @@
-certifi==2020.6.20
+certifi==2022.12.7
 cffi==1.14.0
 fairseq==0.7.1
 fastBPE==0.1.0
