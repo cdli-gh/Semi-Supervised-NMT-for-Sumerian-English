@@ -165,7 +165,7 @@ virtualenv==15.1.0
 waitress==1.4.4
 wcwidth==0.1.9
 webencodings==0.5.1
-Werkzeug==1.0.1
+Werkzeug==2.2.3
 xkit==0.0.0
 yarg==0.1.9
 zipp==3.1.0
